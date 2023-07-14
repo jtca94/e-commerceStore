@@ -55,7 +55,7 @@ INSERT INTO products (userId, name, description, price, category, image, stock) 
 (1, 'The Witcher 3: Wild Hunt', 'The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by Polish developer CD Projekt Red and is based on The Witcher series of fantasy novels written by Andrzej Sapkowski. It is the sequel to the 2011 game The Witcher 2: Assassins of Kings and the third main installment in The Witcher video game series, played in an open world with a third-person perspective. Players control protagonist Geralt of Rivia, a monster slayer (known as a Witcher) who is looking for his missing adopted daughter on the run from the Wild Hunt, an otherworldly force determined to capture her and use her powers.', 59990, 'Aventura', 'https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png', 100),
 (1, 'Grand Theft Auto V', 'Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the first main entry in the Grand Theft Auto series since 2008s Grand Theft Auto IV. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and arms smuggler Trevor Philips—and their efforts to commit heists while under pressure from a corrupt government agency and powerful criminals. The open world design lets players freely roam San Andreas open countryside and the fictional city of Los Santos, based on Los Angeles.', 49990, 'Acción', 'https://cdn-products.eneba.com/resized-products/t0zqmqhdcxppyol3mtlg_350x200_2x-0.jpg', 100);
 ```
-### 2. Crear un archivo .env en la raíz del proyecto con las siguientes variables de entorno:
+### 2. Crear un archivo .env en la raíz de server con las siguientes variables:
 
 ```bash
 PGUSER=postgres
@@ -66,7 +66,14 @@ PGPORT=5432
 PORT=3000
 SECRET_KEY=secret_key
 ```
-### 3. Instalar dependencias en ambas carpetas (server y client)
+
+### 3. Crear un archivo .env en la raíz de client con las siguientes variables:
+
+```bash
+VITE_API_URL="http://localhost:3000"
+```
+
+### 4. Instalar dependencias en ambas carpetas (server y client)
 
 ```bash
 cd server
@@ -74,20 +81,20 @@ npm install
 cd client
 npm install
 ```
-### 4. Iniciar el servidor
+### 5. Iniciar el servidor
 
 ```bash
 cd server
 npm run dev
 ```
-### 5. Iniciar el cliente
+### 6. Iniciar el cliente
 
 ```bash
 cd client
 npm run dev
 ```
 
-### 6. Iniciar Sesión con el usuario administrador
+### 7. Iniciar Sesión con el usuario administrador
 
 ```bash
 email: admin@admin.com
