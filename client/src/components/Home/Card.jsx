@@ -20,7 +20,7 @@ export default function CardHome({product}) {
             {product.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {product.description}
+            {product.category}
           </Typography>
         </CardContent>
       </CardActionArea>

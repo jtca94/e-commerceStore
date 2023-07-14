@@ -23,7 +23,7 @@ const Contacto = () => {
             sx={{gap: "2rem"}}
           >
             <Typography variant="h4" fontWeight="bold">
-              QUIENES SOMOS
+              QUIÉNES SOMOS
             </Typography>
             <Typography align="justify">
               En nuestra tienda, nos enorgullece presentarnos como un referente

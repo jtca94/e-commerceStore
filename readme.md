@@ -1,3 +1,10 @@
+# APP tiende de e-commerce
+
+## Instrucciones para revision
+
+### 1. Crear la `base de datos` con la siguiente información
+
+```sql
 CREATE DATABASE IF NOT EXISTS `db_store`;
 
 CREATE TABLE users (
@@ -47,6 +54,74 @@ INSERT INTO products (userId, name, description, price, category, image, stock) 
 (1, 'Red Dead Redemption 2', 'Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. The game is the third entry in the Red Dead series and is a prequel to the 2010 game Red Dead Redemption. The story is set in 1899 in a fictionalized representation of the Western, Midwestern, and Southern United States and follows outlaw Arthur Morgan, a member of the Van der Linde gang. Arthur must deal with the decline of the Wild West whilst attempting to survive against government forces, rival gangs, and other adversaries. The story also follows fellow gang member John Marston, the protagonist of Red Dead Redemption.', 24590, 'Mundo Abierto', 'https://falabella.scene7.com/is/image/Falabella/gsc_114127330_891920_1?wid=800&hei=800&qlt=70', 100),
 (1, 'The Witcher 3: Wild Hunt', 'The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by Polish developer CD Projekt Red and is based on The Witcher series of fantasy novels written by Andrzej Sapkowski. It is the sequel to the 2011 game The Witcher 2: Assassins of Kings and the third main installment in The Witcher video game series, played in an open world with a third-person perspective. Players control protagonist Geralt of Rivia, a monster slayer (known as a Witcher) who is looking for his missing adopted daughter on the run from the Wild Hunt, an otherworldly force determined to capture her and use her powers.', 59990, 'Aventura', 'https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png', 100),
 (1, 'Grand Theft Auto V', 'Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the first main entry in the Grand Theft Auto series since 2008s Grand Theft Auto IV. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and arms smuggler Trevor Philips—and their efforts to commit heists while under pressure from a corrupt government agency and powerful criminals. The open world design lets players freely roam San Andreas open countryside and the fictional city of Los Santos, based on Los Angeles.', 49990, 'Acción', 'https://cdn-products.eneba.com/resized-products/t0zqmqhdcxppyol3mtlg_350x200_2x-0.jpg', 100);
+```
+### 2. Crear un archivo .env en la raíz del proyecto con las siguientes variables de entorno:
+
+```bash
+PGUSER=postgres
+PGHOST=localhost
+PGPASSWORD="tu clave"
+PGDATABASE=db_store
+PGPORT=5432
+PORT=3000
+SECRET_KEY=secret_key
+```
+### 3. Instalar dependencias en ambas carpetas (server y client)
+
+```bash
+cd server
+npm install
+cd client
+npm install
+```
+### 4. Iniciar el servidor
+
+```bash
+cd server
+npm run dev
+```
+### 5. Iniciar el cliente
+
+```bash
+cd client
+npm run dev
+```
+
+### 6. Iniciar Sesión con el usuario administrador
+
+```bash
+email: admin@admin.com
+password: 123123
+```
+
+## Tecnologías utilizadas
+
+- Node.js
+- Express
+- PostgreSQL
+- bcrypt
+- jsonwebtoken
+- React
+- React router dom
+- Formik
+- Yup
+- Material UI
+- Nodemon
+
+### Servidor inicia en http://localhost:3000 y cliente en http://localhost:5173
+
+## Rutas de navegación
+
+- /login
+- /register
+- /products
+- /contacto
+- /products/:id
+- /pedidos
+- /dashboard
+- /dashboard/products/myprod
+- /dashboard/products/sellprod
+- /dashboard/products/mycart
 
 
 
