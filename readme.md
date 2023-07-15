@@ -44,7 +44,7 @@ CREATE TABLE ratings (
 );
 
 INSERT INTO users (userName, firstName, lastName, password, email, address) VALUES
-('admin', 'admin', 'admin', '123123', 'admin@admin.com', 'admin');
+('admin', 'admin', 'admin', '123123123', 'admin@admin.com', 'admin');
 -- insert values of videogames into products table
 INSERT INTO products (userId, name, description, price, category, image, stock) VALUES 
 (1, 'The Last of Us Part II', 'The Last of Us Part II is a 2020 action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment for the PlayStation 4. Set five years after The Last of Us (2013), players control 19-year-old Ellie, who comes into conflict with a mysterious cult in a post-apocalyptic United States. The game contains survival horror elements and is played from the third-person perspective. Players can use firearms, improvised weapons, and stealth to defend against hostile humans and cannibalistic creatures infected by a mutated strain of the Cordyceps fungus.', 59990, 'Acción', 'https://i.ytimg.com/vi/eOiUtRF8k28/maxresdefault.jpg', 100),
@@ -98,7 +98,7 @@ npm run dev
 
 ```bash
 email: admin@admin.com
-password: 123123
+password: 123123123
 ```
 
 ## Tecnologías utilizadas
