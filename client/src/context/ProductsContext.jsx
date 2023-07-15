@@ -29,7 +29,7 @@ export const ProductsProvider = ({children}) => {
   };
 
   return (
-    <ProductsContext.Provider value={{products}}>
+    <ProductsContext.Provider value={{products, getProducts}}>
       {children}
     </ProductsContext.Provider>
   );
