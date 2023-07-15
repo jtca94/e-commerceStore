@@ -6,7 +6,6 @@ export const CartContext = createContext();
 
 export default function CartContextProvider({children}) {
   const [cart, setCart] = useState([]);
-  console.log(cart);
 
   const handleAddToCart = (product) => {
     const exist = cart.find((item) => item.id === product.id);
