@@ -68,7 +68,13 @@ const MyProducts = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>
+          <Button 
+            onClick={handleClose} 
+            autoFocus
+            variant="contained"
+            color="error"
+            sx={{display: "block", m: 3, color: "white"}}
+            >
             ir a Login
           </Button>
         </DialogActions>

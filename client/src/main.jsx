@@ -25,6 +25,9 @@ export const theme = createTheme({
       purple: "#3d0079",
       lightPurple: "#E6E6FA",
     },
+    error: {
+      main: "#ff0000",
+    },
   },
   typography: {
     fontFamily:
