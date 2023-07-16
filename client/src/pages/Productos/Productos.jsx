@@ -41,7 +41,7 @@ const Productos = () => {
                   category={product.category}
                   description={product.description}
                   price={product.price}
-                  to={`http://localhost:5173/productos/${product.id}`}
+                  to={product.id}
                 />
               </Grid>
             ))}

@@ -1,10 +1,11 @@
-import {Container, Typography, Box} from "@mui/material";
+import {Container, Typography, Box, Divider, Button} from "@mui/material";
 import CartCard from "../../components/Cart/CartCard";
 import {useContext} from "react";
 import {CartContext} from "../../context/CartContext";
 import cartImg from "../../images/cartImg.png";
+
 const Carro = () => {
-  const {cart} = useContext(CartContext);
+  const {cart, total} = useContext(CartContext);
   return (
     <Container maxWidth="lg" sx={{}}>
       <Typography
@@ -12,23 +13,54 @@ const Carro = () => {
         fontStyle="italic"
         align="center"
         fontWeight={500}
-        sx={{py: 3, color: "#f50057"}}
+        color="custom.blue"
+        sx={{py: 3, textShadow: "0 0 10px rgba(0,0,0,0.5)"}}
       >
         Mi Compra
       </Typography>
-      <Typography variant="h2">Productos</Typography>
+      <Divider sx={{mb: 3}} />
+      <Typography variant="h4">Aquí puedes editar tu compra</Typography>
       <Box
         sx={{
           borderRadius: "1rem",
-          backgroundColor: "lightgray",
+          backgroundColor: "lightgrey",
           boxShadow: "0 0 10px rgba(0,0,0,0.5)",
           pb: 4,
-          mb:10,
-          mt: 3, 
+          mb: 10,
+          mt: 3,
         }}
       >
         {cart.length > 0 ? (
-          <CartCard />
+          <>
+            <CartCard />
+            <Divider sx={{mb: 3}} />
+            <Typography
+              color="custom.blue"
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                mt: 6,
+                width: "300px",
+                mx: "auto",
+                fontWeight: "bold",
+                textShadow: "0 0 3px rgba(0,0,0,0.5)",
+              }}
+            >
+              Total: ${parseInt(total).toLocaleString("cl-CL")}
+            </Typography>
+            <Button
+              variant="contained"
+              color="success"
+              sx={{
+                display: "flex",
+                mx: "auto",
+                mt: 5,
+                width: 300,
+              }}
+            >
+              Finalizar Compra
+            </Button>
+          </>
         ) : (
           <>
             <Typography sx={{py: 3}} align="center" variant="h4">

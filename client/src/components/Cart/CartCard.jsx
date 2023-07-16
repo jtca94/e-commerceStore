@@ -10,16 +10,20 @@ const CartCard = () => {
     <>
       {cart.map((item) => (
         <Grid
+          spacing={3}
+          container
           sx={{
-            display: "flex",
-            justifyContent: "space-around",
             alignItems: "center",
-            m: 3,
-            pt: 3,
+            my: 3,
           }}
           key={item.id}
         >
-          <Grid item xs={12} sm={4}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{display: "flex", justifyContent: "center"}}
+          >
             <Box
               component="img"
               src={item.image}
@@ -32,11 +36,19 @@ const CartCard = () => {
               }}
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <Typography variant="h5" fontWeight="bold" >
+          <Grid item xs={12} md={4}>
+            <Typography
+              variant="h5"
+              fontWeight="bold"
+              sx={{textAlign: {xs: "center", md: "left"}}}
+            >
               {item.name}
             </Typography>
-            <Typography variant="h5" fontWeight="bold" >
+            <Typography
+              variant="h5"
+              fontWeight="bold"
+              sx={{textAlign: {xs: "center", md: "left"}}}
+            >
               {item.category}
             </Typography>
           </Grid>
@@ -44,12 +56,12 @@ const CartCard = () => {
             sx={{display: "flex", flexDirection: "column"}}
             item
             xs={12}
-            sm={4}
+            md={4}
           >
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "space-evenly",
+                justifyContent: {xs: "center", md: "space-evenly"},
                 alignItems: "center",
                 m: 3,
               }}
@@ -58,40 +70,32 @@ const CartCard = () => {
                 onClick={() => {
                   handleRemoveFromCart(item);
                 }}
+                disabled={item.quantity === 1}
                 variant="contained"
                 size="small"
-                sx={{borderRadius: "50%", backgroundColor: "custom.yellow"}}
+                color="error"
+                sx={{borderRadius: "50%"}}
               >
                 <RemoveIcon />
               </Button>
-              <Typography
-                variant="h5"
-                fontWeight="bold"
-                sx={{ mx: 3}}
-              >
+              <Typography variant="h5" fontWeight="bold" sx={{mx: 3}}>
                 {item.quantity}
               </Typography>
               <Button
                 onClick={() => {
                   handleAddToCart(item);
                 }}
+                disabled={item.quantity === item.stock}
                 variant="contained"
-                color="primary"
+                color="info"
                 size="small"
                 sx={{borderRadius: "50%"}}
               >
                 <AddIcon />
               </Button>
             </Box>
-            <Typography
-              textAlign="center"
-              variant="h5"
-              fontWeight="bold"
-            >
-              $
-              {item.price.toLocaleString("es-AR", {
-                minimumFractionDigits: 2,
-              }) * item.quantity}
+            <Typography textAlign="center" variant="h5" fontWeight="bold">
+              ${parseInt(item.price * item.quantity).toLocaleString("cl-CL")}
             </Typography>
           </Grid>
         </Grid>

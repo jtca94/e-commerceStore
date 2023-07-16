@@ -14,7 +14,8 @@ import PropTypes from "prop-types";
 const CardProducts = (props) => {
   return (
     <>
-      <Link to={props.to} style={{textDecoration: "none"}}>
+      <Link to={ `${import.meta.env.VITE_BASE_URL}/productos/${props.to}`
+      } style={{textDecoration: "none"}}>
         <Card
           sx={{
             backgroundColor: "white",

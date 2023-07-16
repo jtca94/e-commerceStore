@@ -13,14 +13,16 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#151515",
-      alternative: "#001d3d",
+      alternative: "#00ff00",
     },
     secondary: {
       main: "#ffc300",
     },
     custom: {
-      darkBlue: "#000814",
-      blue: "#003566",
+      lightGreen: "#DFF8D5",
+      lightBlue: "#00D0B2",
+      greyGreen: "#8BAF7F",
+      blue: "#004C73",
       yellow: "#ffd60a",
       purple: "#3d0079",
       lightPurple: "#E6E6FA",
@@ -30,8 +32,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    fontFamily: "Space Grotesk, sans-serif",
   },
 });
 
